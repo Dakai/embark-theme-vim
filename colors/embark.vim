@@ -322,10 +322,10 @@ if has('nvim')
   hi link DiagnosticFloatingInfo DiagnosticSignInfo
   hi link DiagnosticFloatingWarn DiagnosticSignWarn
   hi link DiagnosticFloatingError DiagnosticSignError
-  call s:h("DiagnosticUnderlineHint", {"cterm": "undercurl", "gui": "undercurl", "fg": s:purple})
-  call s:h("DiagnosticUnderlineInfo", {"cterm": "undercurl", "gui": "undercurl", "fg": s:blue})
-  call s:h("DiagnosticUnderlineWarn", {"cterm": "undercurl", "gui": "undercurl", "fg": s:yellow})
-  call s:h("DiagnosticUnderlineError", {"cterm": "undercurl", "gui": "undercurl", "fg": s:red})
+  call s:h("DiagnosticUnderlineHint", {"cterm": "underline", "gui": "underline", "sp": s:purple})
+  call s:h("DiagnosticUnderlineInfo", {"cterm": "underline", "gui": "underline", "sp": s:blue})
+  call s:h("DiagnosticUnderlineWarn", {"cterm": "underline", "gui": "underline", "sp": s:yellow})
+  call s:h("DiagnosticUnderlineError", {"cterm": "underline", "gui": "underline", "sp": s:red})
 
   " Telescope support
   call s:h("TelescopeNormal", {"fg": s:astral0})
@@ -364,6 +364,28 @@ if has('nvim')
   " Leap support
   call s:h("LeapLabelPrimary", {"fg": s:bg_dark, "bg": s:dark_cyan, "gui": "bold"})
   call s:h("LeapLabelSecondary", {"fg": s:bg_dark, "bg": s:purple})
+
+  " nvim notify support
+  call s:h("NotifyERRORBorder", {"fg": s:red})
+  hi! link NotifyERRORTitle NotifyERRORBorder
+  hi! link NotifyERRORIcon NotifyERRORBorder
+
+  call s:h("NotifyWARNBorder", {"fg": s:yellow})
+  hi! link NotifyWARNTitle NotifyWARNBorder
+  hi! link NotifyWARNIcon NotifyWARNTitle
+
+  call s:h("NotifyINFOBorder", {"fg": s:green})
+  hi! link NotifyINFOTitle NotifyInfoBorder
+  hi! link NotifyINFOIcon NotifyInfoBorder
+  hi! link NotifyINFOBODY NotifyInfoBorder
+
+  call s:h("NotifyDEBUGBorder", {"fg": s:blue})
+  hi! link NotifyDEBUGTitle NotifyDEBUGBorder
+  hi! link NotifyDEBUGIcon NotifyDEBUGIcon
+
+  call s:h("NotifyTRACEBorder", {"fg": s:purple})
+  hi! link NotifyTRACETitle NotifyTRACEBorder
+  hi! link NotifyTRACEIcon NotifyTRACEBorder
 
   if has('nvim-0.8')
     " Treesitter support
